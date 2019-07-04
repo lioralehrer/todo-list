@@ -1,27 +1,29 @@
 import React from "react";
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
+import TasksList from "../TasksList/TasksList"
+import TaskForm from "../TaskForm/TaskForm"
 class Container extends React.Component {
-    // constructor() {
-    //     super();
+    constructor() {
+        super();
 
-    //     this.state = {
-    //         tasks: []
-    //     };
-    //     this.handleNewTask = this.handleNewTask.bind(this);
-    // }
+        this.state = {
+            tasks: []
+        };
+        this.handleNewTask = this.handleNewTask.bind(this);
+    }
 
-    // handleNewTask(task) {
-    //     this.setState({
-    //         tasks: [...this.state.tasks, task]
-    //     })
-    // }
+    handleNewTask(task) {
+        this.setState({
+            tasks: [...this.state.tasks, task]
+        })
+    }
 
     render() {
         return (
             <div className="container">
                 <Header />
-                {/* <TaskForm handleNewTask={this.hadleNewTask} />
+                <TaskForm handleNewTask={this.hadleNewTask} />
                 <div className="row">
                     <div className="col-md-6 col-xs-6">
                         <h3>Todo</h3>
@@ -33,7 +35,7 @@ class Container extends React.Component {
                         <TasksList tasks={this.state.tasks} />
                     </div>
 
-                </div> */}
+                </div>
 
                 <Footer />
             </div >
