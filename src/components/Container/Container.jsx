@@ -23,7 +23,7 @@ class Container extends React.Component {
         return (
             <div className="container">
                 <Header />
-                <TaskForm handleNewTask={this.hadleNewTask} />
+                <TaskForm handleNewTask={this.handleNewTask} />
                 <div className="row">
                     <div className="col-md-6 col-xs-6">
                         <h3>Todo</h3>

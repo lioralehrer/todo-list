@@ -5,10 +5,12 @@ class TasksForm extends React.Component {
         super();
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmitTask = this.handleSubmitTask.bind(this);
-        this.state = {
-            task: "",
-            description: ""
-        }
+        this.state = (
+            {
+                task: "",
+                description: ""
+            }
+        )
     }
     handleInputChange(e) {
         let inputValue = e.target.value;
