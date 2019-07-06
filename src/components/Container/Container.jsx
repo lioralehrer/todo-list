@@ -14,6 +14,7 @@ class Container extends React.Component {
         this.handleRemove = this.handleRemove.bind(this);
         this.handleDone = this.handleDone.bind(this);
         this.handleRemoveFromDoneList =this.handleRemoveFromDoneList.bind(this);
+        this.handleRedo= this.handleRedo.bind(this);
     }
     handleNewTask(task) {
         this.setState({
@@ -24,8 +25,6 @@ class Container extends React.Component {
         // move the task from the tasks list and put it in done list
         let tasks = Object.assign([], this.state.tasks);
         let doneTask = tasks.splice(taskid, 1);
-
-        console.log(doneTask);
         this.setState({
             doneTasks: [...this.state.doneTasks, doneTask[0]],
             tasks: tasks
@@ -46,6 +45,14 @@ class Container extends React.Component {
             doneTasks: doneTasks
         })
     }
+    handleRedo(taskid){
+        let doneTasks = [...this.state.doneTasks];
+        let tasks = doneTasks.splice(taskid, 1);
+        this.setState({
+            tasks: [...this.state.tasks,tasks[0]],
+            doneTasks: doneTasks
+        })
+    }
 
     render() {
         return (
@@ -60,7 +67,7 @@ class Container extends React.Component {
 
                     <div className="col-md-6 col-xs-6">
                         <h3>Done</h3>
-                        <TasksList tasks={this.state.doneTasks} hidedone="hide-done" handleRemove={this.handleRemoveFromDoneList} />
+                        <TasksList tasks={this.state.doneTasks} hidedone="hide-done" handleRemove={this.handleRemoveFromDoneList} handleRedo={this.handleRedo} />
                     </div>
 
                 </div>
