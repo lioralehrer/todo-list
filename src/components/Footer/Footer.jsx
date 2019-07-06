@@ -10,7 +10,7 @@ class Footer extends React.Component {
                             <div className="copyright-text">
                                 <p>© 2019
               <a href="https://www.appleseeds.org.il/bootcamp"> Appleseedes Bootcamp </a>Keren & Liora Todo-List-App
-              <a href="https://github.com/kerenrn/todo-list-app"> Visit us in GitHub </a>
+              <a href="https://github.com/lioralehrer/todo-list"> Visit us in GitHub </a>
                                 </p>
                             </div>
 
