@@ -1,4 +1,5 @@
 import React from "react";
+import "./Task.css"
 // import index from "react-html-id"
 
 class Task extends React.Component {
@@ -26,8 +27,9 @@ class Task extends React.Component {
         return (
             <li taskid={this.props.taskid}>
                 {`task: ${this.props.title} description: ${this.props.description}`}
-                <button className="done-button" onClick={this.sendIsDone}>Done</button>
-                <button className="remove-button" onClick={this.sendIsRemoved}>Remove</button>
+                <button  className={this.props.hideDone} onClick={this.sendIsDone}>Done</button>
+                <button   onClick={this.sendIsRemoved}>Remove</button>
+                <button  className={this.props.hideRedo} onClick={this.sendRedo} >Redo</button>
             </li>
         )
     }

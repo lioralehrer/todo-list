@@ -13,6 +13,7 @@ class Container extends React.Component {
         this.handleNewTask = this.handleNewTask.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.handleDone = this.handleDone.bind(this);
+        this.handleRemoveFromDoneList =this.handleRemoveFromDoneList.bind(this);
     }
     handleNewTask(task) {
         this.setState({
@@ -22,12 +23,13 @@ class Container extends React.Component {
     handleDone(taskid) {
         // move the task from the tasks list and put it in done list
         let tasks = Object.assign([], this.state.tasks);
-        let doneTask =  tasks.splice(taskid, 1);
+        let doneTask = tasks.splice(taskid, 1);
+
         console.log(doneTask);
         this.setState({
             doneTasks: [...this.state.doneTasks, doneTask[0]],
             tasks: tasks
-            
+
         })
     }
     handleRemove(taskid) {
@@ -35,6 +37,13 @@ class Container extends React.Component {
         tasks.splice(taskid, 1);
         this.setState({
             tasks: tasks
+        })
+    }
+    handleRemoveFromDoneList(taskid) {
+        let doneTasks = [...this.state.doneTasks];
+        doneTasks.splice(taskid, 1);
+        this.setState({
+            doneTasks: doneTasks
         })
     }
 
@@ -46,12 +55,12 @@ class Container extends React.Component {
                 <div className="row">
                     <div className="col-md-6 col-xs-6">
                         <h3>Todo</h3>
-                        <TasksList tasks={this.state.tasks} handleDone={this.handleDone} handleRemove={this.handleRemove} />
+                        <TasksList tasks={this.state.tasks} handleDone={this.handleDone} handleRemove={this.handleRemove} hideredo="hide-redo" />
                     </div>
 
                     <div className="col-md-6 col-xs-6">
                         <h3>Done</h3>
-                        <TasksList tasks={this.state.doneTasks} />
+                        <TasksList tasks={this.state.doneTasks} hidedone="hide-done" handleRemove={this.handleRemoveFromDoneList} />
                     </div>
 
                 </div>

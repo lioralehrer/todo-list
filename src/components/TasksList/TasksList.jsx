@@ -23,7 +23,8 @@ class TasksList extends React.Component {
                 <ul>
                     {this.props.tasks.map((obj, index) =>
                         <Task title={obj.task} description={obj.description} taskid={index} key={index}
-                            handleDone={this.handleDone} handleRemove={this.handleRemove} />)}
+                            handleDone={this.handleDone} handleRemove={this.handleRemove} 
+                            hideDone={this.props.hidedone} hideRedo={this.props.hideredo}/>)}
                 </ul>
             )
         }
