@@ -5,7 +5,7 @@ class Task extends React.Component {
     constructor() {
         super();
         // index.enableUniqueIds.bind(this)
-        this.sendIsDone = this.sendIsDone(this);
+        this.sendIsDone = this.sendIsDone.bind(this);
         this.sendIsRemoved = this.sendIsRemoved.bind(this);
         this.state = {
             isDone: false,
@@ -13,8 +13,8 @@ class Task extends React.Component {
         }
     }
     sendIsDone() {
-        // var key = parseInt(this.props.key);
-        // this.props.handleRemove(key);
+        var taskid = parseInt(this.props.taskid);
+        this.props.handleDone(taskid);
     }
 
     sendIsRemoved() {

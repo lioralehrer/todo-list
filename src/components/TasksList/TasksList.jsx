@@ -10,15 +10,10 @@ class TasksList extends React.Component {
     handleRemove(taskid) {
         // console.log(taskid);
         this.props.handleRemove(taskid);
-        // let updatedList = this.props.tasks.filter((obj) => { return (obj.taskid !== taskid) });
-        // this.props.tasks = updatedList;
-        // this.props.removeItem(taskid);
     }
-    handleDone() {
-        console.log();
-        // let updatedList = this.props.tasks.filter((obj) => { return (obj.taskId !== taskId) });
-        // this.props.tasks = updatedList;
-       
+    handleDone(taskid) {
+        console.log(taskid);
+      this.props.handleDone(taskid);
     }
 
 
