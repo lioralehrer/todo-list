@@ -3,6 +3,7 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import TasksList from "../TasksList/TasksList"
 import TaskForm from "../TaskForm/TaskForm"
+import "./Container.css"
 class Container extends React.Component {
     constructor() {
         super();
@@ -60,12 +61,12 @@ class Container extends React.Component {
                 <Header />
                 <TaskForm handleNewTask={this.handleNewTask} />
                 <div className="row">
-                    <div className="col-md-6 col-xs-6">
+                    <div className="col-md-6 col-xs-6 list">
                         <h3>Todo</h3>
                         <TasksList tasks={this.state.tasks} handleDone={this.handleDone} handleRemove={this.handleRemove} hideredo="hide-redo" />
                     </div>
 
-                    <div className="col-md-6 col-xs-6">
+                    <div className="col-md-6 col-xs-6 list">
                         <h3>Done</h3>
                         <TasksList tasks={this.state.doneTasks} hidedone="hide-done" handleRemove={this.handleRemoveFromDoneList} handleRedo={this.handleRedo} />
                     </div>

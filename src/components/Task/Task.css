@@ -4,6 +4,6 @@
 .hide-done{
     display: none;
 }
-.hide-remove{
-    display: none;
+.taskButton{
+    float: right;
 }

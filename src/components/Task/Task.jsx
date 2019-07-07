@@ -25,11 +25,11 @@ class Task extends React.Component {
 
     render() {
         return (
-            <li taskid={this.props.taskid}>
+            <li  taskid={this.props.taskid} className="glyphicon glyphicon-pencil" >
                 {`task: ${this.props.title} description: ${this.props.description}`}
-                <button className={this.props.hideDone} onClick={this.sendIsDone}>Done</button>
-                <button onClick={this.sendIsRemoved}>Remove</button>
-                <button className={this.props.hideRedo} onClick={this.sendRedo} >Redo</button>
+                <button className={this.props.hideDone}  onClick={this.sendIsDone}>Done</button>
+                <button onClick={this.sendIsRemoved}  ><span className="glyphicon glyphicon-trash"></span></button>
+                <button className={this.props.hideRedo}  onClick={this.sendRedo} >Redo</button>
             </li>
         )
     }

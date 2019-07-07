@@ -21,7 +21,7 @@ class TasksList extends React.Component {
     render() {
         if (this.props.tasks && this.props.tasks.length > 0) {
             return (
-                <ul>
+                <ul >
                     {this.props.tasks.map((obj, index) =>
                         <Task title={obj.task} description={obj.description} taskid={index} key={index}
                             handleDone={this.handleDone} handleRemove={this.handleRemove} 
